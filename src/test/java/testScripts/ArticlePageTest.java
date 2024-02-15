@@ -97,7 +97,7 @@ public class ArticlePageTest {
 
 		 extentTest=extentReports.createTest("Update Article Test");
 	     updateArticle.update("Articles of Testing","Testing Articles written by software developers for software developers.");
-	     Assert.assertEquals(  updateArticle.updatedName(),"Articles of Testin");
+	     Assert.assertEquals(  updateArticle.updatedName(),"Articles of Testing");
 
 	 }
 	 
