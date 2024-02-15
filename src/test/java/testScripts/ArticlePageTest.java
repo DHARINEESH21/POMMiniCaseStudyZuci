@@ -99,7 +99,7 @@ public class ArticlePageTest {
 		 extentTest=extentReports.createTest("Update Article Test");
 	     updateArticle.update("Articles of Testing","Testing Articles written by software developers for software developers.");
 	     String nameOfArticle=driver.findElement(By.xpath("//h1[contains(text(),'Articles of Testing')]")).getText();
-	     System.out.println("Updated Article Title- "+nameOfArticle);
+	   //  System.out.println("Updated Article Title- "+nameOfArticle);
 	     Assert.assertEquals(nameOfArticle,"Articles of Testing");
 
 	 }
