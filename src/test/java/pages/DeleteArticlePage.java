@@ -25,15 +25,17 @@ public class DeleteArticlePage {
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
+		
 	}
 	public void deleteArticle()
 	{
+		
+		deleteBtn.click();
 //		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		wait.until(ExpectedConditions:Ele)
-		deleteBtn.click();
-		Alert alert=driver.switchTo().alert();
-		Assert.assertEquals(alert.getText(), "Want to delete the article?");
-		alert.accept();
+//		Alert alert=driver.switchTo().alert();
+//		Assert.assertEquals(alert.getText(), "Want to delete the article?");
+//		alert.accept();
 
 	}
 

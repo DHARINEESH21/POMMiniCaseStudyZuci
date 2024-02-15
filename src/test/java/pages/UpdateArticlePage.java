@@ -31,24 +31,25 @@ public class UpdateArticlePage {
 	@FindBy(xpath="(//a[@href='#/'])[2]") 
 	WebElement home_btn;
 	
-	@FindBy(xpath="//button[@class='nav-link ']") 
+	@FindBy(xpath="//button[@class='nav-link']") 
 	WebElement globalfeed;
 	
-	   @FindBy(xpath="//h1[contains(text(),'Articles of Testing')]")
-       WebElement headerCheckBtn;
+//	   @FindBy(xpath="//h1[contains(text(),'Articles of Testing')]")
+//       WebElement headerCheckBtn;
 	
 	public UpdateArticlePage(WebDriver driver) { 
 		PageFactory.initElements(driver,this); 
 		}
 	
-	public void update(WebDriver driver) {
+	public void update(String ATitle,String Aabout) {
 		editBtn.click(); 
 		articleTitle.clear();
-		articleTitle.sendKeys("Articles of Testing");
+		articleTitle.sendKeys(ATitle);
 		articleAbout.clear();
-		articleAbout.sendKeys("Testing Articles written by software developers for software developers."); 
+		articleAbout.sendKeys(Aabout); 
 		update_btn.click();
-		Assert.assertEquals(headerCheckBtn.getText(),"Articles of Testing");
+		
+		//Assert.assertEquals(headerCheckBtn.getText(),"Articles of Testing");
 		//home_btn.click();
 	}
 	

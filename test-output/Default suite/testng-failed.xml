@@ -5,8 +5,11 @@
     <classes>
       <class name="testScripts.ArticlePageTest">
         <methods>
-          <include name="deleteArticle"/>
+          <include name="setupExtent"/>
+          <include name="newArticle"/>
+          <include name="teardown"/>
           <include name="setup"/>
+          <include name="finishExtent"/>
         </methods>
       </class> <!-- testScripts.ArticlePageTest -->
     </classes>

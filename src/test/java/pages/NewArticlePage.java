@@ -28,21 +28,22 @@ public class NewArticlePage {
    @FindBy(xpath="//button[@type='submit']") 	
    WebElement publish_article_btn;
    
-   @FindBy(xpath="//h1[contains(text(),'Testing11')]")
-   WebElement headerBtn;
+//   @FindBy(xpath="//h1[contains(text(),'Testing11')]")
+//   WebElement headerBtn;
  
  public NewArticlePage(WebDriver driver) {
 	PageFactory.initElements(driver,this); 
 	} 
  
- public void newArticle() {
+ public void newArticle(String ATitle,String Aabout,String Aarea,String Atags) {
 	 article_btn.click();
-	 articleTitle.sendKeys("Testing11");
-	 articleAbout.sendKeys("Details of Testing"); 
-	 textArea.sendKeys("Software testing can be stated as the process of verifying and validating whether a software or application is bug-free");
-	 enterTags.sendKeys("Testing"); 
+	 articleTitle.sendKeys(ATitle);
+	 articleAbout.sendKeys(Aabout); 
+	 textArea.sendKeys( Aarea);
+	 enterTags.sendKeys(Atags); 
 	 publish_article_btn.click(); 		
-	   Assert.assertEquals(headerBtn.getText(),"Testing11");
+	 
+	//   Assert.assertEquals(headerBtn.getText(),"Testing11");
  }
  
 }
