@@ -69,12 +69,12 @@ public class ArticlePageTest {
 	  
 	  
 	 @Test(priority=1)
-	 public void loginTest() {
+	 public void ValidloginTest() {
 
 		extentTest=extentReports.createTest("Login Test");
-		loginPage.loginTest("Username@gmail.com","Username");
-		String username=driver.findElement(By.xpath("//div[contains(text(),'Username')]")).getText();
-		Assert.assertEquals(username,"Username");
+		loginPage.validloginTest("Username@gmail.com","Username");
+		boolean loginName= loginPage.loginName();
+		 Assert.assertTrue(loginName);
 	 }
 	 
 	 
@@ -83,9 +83,8 @@ public class ArticlePageTest {
 
 		 extentTest=extentReports.createTest("New Article Test");
          newArticlePage.newArticle("Testing11","Details of Testing","Software testing can be stated as the process of verifying and validating whether a software or application is bug-free","Testing");
-	     String headerText=driver.findElement(By.xpath("//h1[contains(text(),'Testing11')]")).getText();
-	     System.out.println("New Article Title-"+headerText);
-         Assert.assertEquals(headerText,"Testing11");
+         
+         Assert.assertEquals(newArticlePage.articleName(),"Testing11");
 }
 
 
@@ -98,9 +97,7 @@ public class ArticlePageTest {
 
 		 extentTest=extentReports.createTest("Update Article Test");
 	     updateArticle.update("Articles of Testing","Testing Articles written by software developers for software developers.");
-	     String nameOfArticle=driver.findElement(By.xpath("//h1[contains(text(),'Articles of Testing')]")).getText();
-	   //  System.out.println("Updated Article Title- "+nameOfArticle);
-	     Assert.assertEquals(nameOfArticle,"Articles of Testing");
+	     Assert.assertEquals(  updateArticle.updatedName(),"Articles of Testin");
 
 	 }
 	 
@@ -111,11 +108,11 @@ public class ArticlePageTest {
 		
 		extentTest=extentReports.createTest("Delete Article Test");
 		deleteArticle.deleteArticle();
-		Alert alert=driver.switchTo().alert();
-		Assert.assertEquals(alert.getText(), "Want to delete the article?");
-		alert.accept();
+		Assert.assertEquals(deleteArticle.deleteCheck(), "Articles not available.");
 
 	}
+	
+
 	
 	
 	@AfterMethod

@@ -34,25 +34,29 @@ public class UpdateArticlePage {
 	@FindBy(xpath="//button[@class='nav-link']") 
 	WebElement globalfeed;
 	
-//	   @FindBy(xpath="//h1[contains(text(),'Articles of Testing')]")
-//       WebElement headerCheckBtn;
+	   @FindBy(xpath="//h1[contains(text(),'Articles of Testing')]")
+       WebElement headerCheckBtn;
 	
 	public UpdateArticlePage(WebDriver driver) { 
 		PageFactory.initElements(driver,this); 
 		}
 	
-	public void update(String ATitle,String Aabout) {
+	public void update(String ArtTitle,String Artabout) {
 		editBtn.click(); 
 		articleTitle.clear();
-		articleTitle.sendKeys(ATitle);
+		articleTitle.sendKeys(ArtTitle);
 		articleAbout.clear();
-		articleAbout.sendKeys(Aabout); 
+		articleAbout.sendKeys(Artabout); 
 		update_btn.click();
 		
 		//Assert.assertEquals(headerCheckBtn.getText(),"Articles of Testing");
 		//home_btn.click();
 	}
 	
+	public String updatedName()
+	{
+		return headerCheckBtn.getText();
+	}
 	
 
 }

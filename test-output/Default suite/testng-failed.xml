@@ -6,8 +6,8 @@
       <class name="testScripts.ArticlePageTest">
         <methods>
           <include name="setupExtent"/>
-          <include name="newArticle"/>
           <include name="teardown"/>
+          <include name="updateArticlePage"/>
           <include name="setup"/>
           <include name="finishExtent"/>
         </methods>

@@ -20,6 +20,8 @@ public class LoginValidPage {
       @FindBy(xpath="//button[contains(text(),'Login')]")
       WebElement loginbtn;
       
+      @FindBy(xpath="//img[@alt='Username']")
+    	WebElement chckName;
       
      public  LoginValidPage (WebDriver driver) { 
     	 
@@ -27,11 +29,19 @@ public class LoginValidPage {
      
      }
      
-     public void loginTest(String stremail,String strpassword) {
+     public void validloginTest(String stremail,String strpassword) {
     	login_btn.click(); 	
     	 email.sendKeys(stremail); 	 
     	 password.sendKeys(strpassword); 	
     	 loginbtn.click(); 	
+    	 
     	 }
+     
+     public boolean loginName()
+ 	{
+ 		boolean loginName= chckName.isDisplayed();
+ 		
+ 		return loginName;
+ 	}
     }
 

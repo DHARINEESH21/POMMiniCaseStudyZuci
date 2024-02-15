@@ -28,22 +28,26 @@ public class NewArticlePage {
    @FindBy(xpath="//button[@type='submit']") 	
    WebElement publish_article_btn;
    
-//   @FindBy(xpath="//h1[contains(text(),'Testing11')]")
-//   WebElement headerBtn;
+   @FindBy(xpath="//h1[contains(text(),'Testing11')]")
+   WebElement headerBtn;
  
  public NewArticlePage(WebDriver driver) {
 	PageFactory.initElements(driver,this); 
 	} 
  
- public void newArticle(String ATitle,String Aabout,String Aarea,String Atags) {
+ public void newArticle(String ArtTitle,String Artabout,String Artarea,String Arttags) {
 	 article_btn.click();
-	 articleTitle.sendKeys(ATitle);
-	 articleAbout.sendKeys(Aabout); 
-	 textArea.sendKeys( Aarea);
-	 enterTags.sendKeys(Atags); 
+	 articleTitle.sendKeys(ArtTitle);
+	 articleAbout.sendKeys(Artabout); 
+	 textArea.sendKeys( Artarea);
+	 enterTags.sendKeys(Arttags); 
 	 publish_article_btn.click(); 		
 	 
 	//   Assert.assertEquals(headerBtn.getText(),"Testing11");
  }
+ public String articleName()
+	{
+		return headerBtn.getText();
+	}
  
 }

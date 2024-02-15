@@ -20,6 +20,9 @@ public class DeleteArticlePage {
 	
 	@FindBy(xpath = "(//button[@class='btn btn-sm'])[1]")
 	WebElement deleteBtn;
+	
+	@FindBy(xpath="//div[contains(text(),'Articles not available.')]")
+	WebElement chck;
 
 	public DeleteArticlePage(WebDriver driver)
 	{
@@ -31,12 +34,17 @@ public class DeleteArticlePage {
 	{
 		
 		deleteBtn.click();
-//		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//		wait.until(ExpectedConditions:Ele)
-//		Alert alert=driver.switchTo().alert();
-//		Assert.assertEquals(alert.getText(), "Want to delete the article?");
-//		alert.accept();
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	//	wait.until(ExpectedConditions:Ele)
+		Alert alert=driver.switchTo().alert();
+		Assert.assertEquals(alert.getText(), "Want to delete the article?");
+		alert.accept();
 
+	}
+	
+	public String deleteCheck()
+	{
+		return chck.getText();
 	}
 
  
